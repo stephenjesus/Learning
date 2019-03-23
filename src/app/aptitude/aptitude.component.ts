@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AptitudeComponent implements OnInit {
   collection = [];
   currentQ;
+  p: number = 1;
   toggle = false;
   constructor() {
     const json = {
@@ -34,6 +35,9 @@ export class AptitudeComponent implements OnInit {
     }
 
    }
+  //  pageChanged(event) {
+  //    console.log('pageChanged');
+  //   }
 
   ngOnInit() {
   }
