@@ -75,11 +75,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { MainnavigationbarComponent } from './mainnavigationbar/mainnavigationbar.component';
+import { AptitudeComponent } from './aptitude/aptitude.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainnavigationbarComponent
+    MainnavigationbarComponent,
+    AptitudeComponent
   ],
   imports: [
     BrowserModule,

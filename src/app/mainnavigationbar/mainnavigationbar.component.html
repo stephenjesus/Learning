@@ -1,9 +1,9 @@
 
-<div class="ui-g-12">
+<div class="ui-g-12" style="margin-bottom: 18%;">
     <span class="ui-g-12">
-            <img class="ui-g-9 container" src="assets/home1.jpg">
+            <img class="ui-g-12 container" src="assets/home1.jpg">
     </span>
-    <div class="ui-g-9">
+    <div class="ui-g-12">
         <ul id="nav">
             <li><a href="https://trendingnews005.blogspot.com/2018/12/the-top-10-programming-languages.html">Home</a></li>
 
@@ -11,7 +11,7 @@
                 <ul class="subs">
                     <li><a href="#">Logical</a></li>
                     <li><a href="#">Verbal</a></li>
-                    <li><a href="#">C Aptitude</a></li>
+                    <li class="cursor"><a  (click)="Showtopics('Aptitude' , 'c')">C Aptitude</a></li>
                     <li><a href="#">Puzzles</a></li>
                 </ul>
             </li>
@@ -56,14 +56,35 @@
                     <li><a href="#">Coding</a></li>
                 </ul>
             </li>
-            <div id="lavalamp"></div>
+            <li><a class="hsubs" href="#">Practice</a>
+                <ul class="subs">
+                    <li><a href="#">Technical</a></li>
+                    <li><a href="#">HR</a></li>
+                    <li><a href="#">Coding</a></li>
+                </ul>
+            </li>
+            <li><a class="hsubs" href="#">Contact</a>
+                <ul class="subs">
+                </ul>
+            </li>
+            <li><a class="hsubs" href="#">About</a>
+                <ul class="subs">
+                </ul>
+            </li>
+            <!-- <div id="lavalamp"></div> -->
         </ul>
     </div>
     <span class="ui-g-3 ui-g-nopad textcolor">
-            <img class="ui-g-12" src="assets/interview.png">
+            <!-- <img class="ui-g-12" src="assets/interview.png">
             Never stop learning, because life never stops teaching
 
-            practice makes perfect
+            practice makes perfect -->
      </span>
+
+
+     <div class="ui-g-9">
+            <app-aptitude *ngIf="showaptitude"></app-aptitude>
+     </div>
+      
 </div>
 

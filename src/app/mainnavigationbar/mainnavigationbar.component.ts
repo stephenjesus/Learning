@@ -14,6 +14,7 @@ import { BreadcrumbModule, MenuItem, TabViewModule,
 export class MainnavigationbarComponent implements OnInit {
   breadcrmbItems: MenuItem[];
   homelink: any = {};
+  showaptitude = false;
   constructor() {
     this.breadcrmbItems = [];
     this.breadcrmbItems.push({ label : 'test' });
@@ -21,6 +22,37 @@ export class MainnavigationbarComponent implements OnInit {
    }
 
   ngOnInit() {
+  }
+  Hidefunction() {
+    this.showaptitude = false;
+  }
+
+  Showtopics(type , subtype) {
+    console.log( type  , subtype);
+    switch (type) {
+      case 'Aptitude': {
+        this.Hidefunction();
+        this.showaptitude = true;
+        break;
+      }
+      case 'Programming': {
+        this.Hidefunction();
+        break;
+      }
+      case 'Interview': {
+        this.Hidefunction();
+        break;
+      }
+      case 'Service': {
+        this.Hidefunction();
+        break;
+      }
+      case 'Product': {
+        this.Hidefunction();
+        break;
+      }
+
+    }
   }
 
 }
