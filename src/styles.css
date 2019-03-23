@@ -7,3 +7,6 @@ body {
 .textcolor {
     color: #ffffff;
 }
+.textcenter {
+    text-align: center
+}

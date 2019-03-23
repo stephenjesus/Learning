@@ -1,5 +1,37 @@
 <div class="ui-g-12 bgcolor">
-   <span class="ui-g-12">
-
+   <span class="ui-g-12 textcenter">
+         C Programming (MCQ) 
    </span>
+    <h4 class="ui-g-12 keyclass">
+        Important Formulae or Keywords
+    </h4>
+    <span class="ui-g-12">
+        <ul>
+            <li>If A can do a piece of work in n days, then A's 1 day's work = 1/n.
+            </li> <br>
+            <li>
+                If A's 1 day's work = 1/n , then A can finish the work in n days.
+            </li> <br>
+            <li>
+                If A is thrice as good a workman as B, then:
+                
+                Ratio of work done by A and B = 3 : 1.
+                
+                Ratio of times taken by A and B to finish a work = 1 : 3.
+            </li>
+        </ul>
+    </span>
+
+    <span class="ui-g-12">
+        Exercise 
+    </span>
+    <span class="ui-g-12">
+        <ul>
+			<li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
+		</ul>
+
+		<pagination-controls (pageChange)="p = $event">
+            
+        </pagination-controls>
+    </span>
 </div>

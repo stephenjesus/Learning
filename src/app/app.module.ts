@@ -68,6 +68,7 @@ import {
 } from 'primeng/primeng';
 
 import { ChartModule } from 'primeng/components/chart/chart';
+import {NgxPaginationModule} from 'ngx-pagination'; 
 import { Routing } from './routes';
 import { SharedModule } from './Shared/shared-module';
 
@@ -85,6 +86,7 @@ import { AptitudeComponent } from './aptitude/aptitude.component';
   ],
   imports: [
     BrowserModule,
+    NgxPaginationModule,
     Routing,
     WebcamModule,
     FormsModule,

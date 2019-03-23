@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./aptitude.component.css']
 })
 export class AptitudeComponent implements OnInit {
-
-  constructor() { }
+  collection = [];
+  constructor() {
+    for (let i = 1; i <= 100; i++) {
+      this.collection.push(`item ${i}`);
+    }
+   }
 
   ngOnInit() {
   }
