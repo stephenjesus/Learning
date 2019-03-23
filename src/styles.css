@@ -10,3 +10,13 @@ body {
 .textcenter {
     text-align: center
 }
+.cursor {
+    cursor: pointer;
+}
+
+#spinnerId .ui-progress-spinner {
+    left: 50%;
+    top: 45%;
+    width: 4em;
+    height: 4em;
+}

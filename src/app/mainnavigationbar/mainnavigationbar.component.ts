@@ -15,6 +15,7 @@ export class MainnavigationbarComponent implements OnInit {
   breadcrmbItems: MenuItem[];
   homelink: any = {};
   showaptitude = false;
+  blocked = false;
   constructor() {
     this.breadcrmbItems = [];
     this.breadcrmbItems.push({ label : 'test' });
@@ -32,7 +33,11 @@ export class MainnavigationbarComponent implements OnInit {
     switch (type) {
       case 'Aptitude': {
         this.Hidefunction();
-        this.showaptitude = true;
+        this.blocked = true;
+        setTimeout(() => {
+          this.blocked = false;
+          this.showaptitude = true;
+        }, 3000);
         break;
       }
       case 'Programming': {

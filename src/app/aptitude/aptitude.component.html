@@ -37,7 +37,7 @@
             </span>
             <span class="ui-g-12">
                     <ul style="list-style-type:disc;" *ngFor="let op of item.options">
-                        <li> {{ op }}</li>
+                        <li class="cursor" (click)="viewanswer(item)"> {{ op }}</li>
                     </ul>
             </span>
             <span class="ui-g-12 padleft26" *ngIf="item === this.currentQ">

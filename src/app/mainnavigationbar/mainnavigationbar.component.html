@@ -39,7 +39,7 @@
                 <ul class="subs">
                     <li><a href="#">Technical</a></li>
                     <li><a href="#">HR</a></li>
-                    <li><a href="#">Coding</a></li>
+                    <li><a href="#">Interview Questions</a></li>
                 </ul>
             </li>
             <li><a class="hsubs" href="#">Product Company</a>
@@ -85,6 +85,10 @@
      <div class="ui-g-12">
             <app-aptitude *ngIf="showaptitude"></app-aptitude>
      </div>
+
+    <p-blockUI [blocked]="blocked">
+        <p-progressSpinner id="spinnerId" strokeWidth="5"></p-progressSpinner>
+    </p-blockUI>
       
 </div>
 

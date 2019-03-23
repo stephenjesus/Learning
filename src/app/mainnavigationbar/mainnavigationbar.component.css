@@ -11,9 +11,6 @@
     padding: 0 0 0 9px;
     position: relative;
 }
-.cursor {
-    cursor: pointer;
-}
 .container {
     height: 300px;
 }
@@ -132,4 +129,11 @@
 }
 #nav li:nth-of-type(8):hover ~ #lavalamp {
     left: 565px;
+}
+
+@keyframes ui-progress-spinner-color {
+    100%,
+    0% {
+            stroke: #5eac1a;
+    }
 }
