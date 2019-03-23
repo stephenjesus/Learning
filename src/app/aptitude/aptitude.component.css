@@ -6,3 +6,23 @@
     padding-left: 40px;
     padding-top: 2%;
 }
+.quesspan {
+margin-bottom: 20px;
+}
+.sno {
+    padding-right: 12px;
+}
+.viewans {
+    border: none;
+    border-radius: 3px;
+    height: 25px;
+    padding: 0px;
+    width: 120px;
+    cursor: pointer;
+}
+.mx-green {
+    color: #5eac1a;
+}
+.padleft26 {
+    padding-left: 26px;
+}

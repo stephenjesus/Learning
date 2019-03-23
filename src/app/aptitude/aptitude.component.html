@@ -22,16 +22,43 @@
         </ul>
     </span>
 
-    <span class="ui-g-12">
+    <h4 class="ui-g-12 keyclass">
         Exercise 
+    </h4>
+    <span class="ui-g-12 quesspan">
+    
+        <span class="ui-g-12 ui-g-nopad" *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p } ; let i = index">
+            <span class="ui-g-12">
+            <span class="ui-g-12">
+                <span class="sno"> {{ (i + 1) }}. </span>
+                <span>
+                    {{ item.q_data }}
+                </span>
+            </span>
+            <span class="ui-g-12">
+                    <ul style="list-style-type:disc;" *ngFor="let op of item.options">
+                        <li> {{ op }}</li>
+                    </ul>
+            </span>
+            <span class="ui-g-12 padleft26" *ngIf="item === this.currentQ">
+                <span class="sno mx-green"> Answer: </span>
+                <span>
+                    {{ item.answer }}
+                </span>
+            </span>
+            <span class="ui-g-12 padleft26" *ngIf="item === this.currentQ">
+                    <span class="sno mx-green"> Explanation: </span>  <br> <br>
+                    <span>
+                        {{ item.explanation }}
+                    </span>
+                </span>
+            <span class="ui-g-12 padleft26">
+                <button class="viewans" (click)="viewanswer(item)" > View Answer </button>
+            </span>
+            </span>
+        </span>
     </span>
-    <span class="ui-g-12">
-        <ul>
-			<li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
-		</ul>
-
-		<pagination-controls (pageChange)="p = $event">
-            
-        </pagination-controls>
-    </span>
+    <pagination-controls (pageChange)="p = $event">
+    
+    </pagination-controls>
 </div>
