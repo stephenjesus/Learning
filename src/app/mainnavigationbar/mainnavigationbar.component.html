@@ -9,22 +9,22 @@
 
             <li><a class="hsubs" href="#">Aptitude</a>
                 <ul class="subs">
-                    <li><a href="#">Logical</a></li>
-                    <li><a href="#">Verbal</a></li>
+                    <li class="cursor"><a href="#">Logical</a></li>
+                    <li class="cursor"><a href="#">Verbal</a></li>
                     <li class="cursor"><a  (click)="Showtopics('Aptitude' , 'c')">C Aptitude</a></li>
-                    <li><a href="#">Puzzles</a></li>
+                    <li class="cursor"><a href="#">Puzzles</a></li>
                 </ul>
             </li>
 
             <li><a class="hsubs" href="#">Programming</a>
                 <ul class="subs">
-                    <li><a href="#">C programming</a></li>
-                    <li><a href="#">Java</a></li>
-                    <li><a href="#">HTML</a></li>
-                    <li><a href="#">CSS</a></li>
-                    <li><a href="#">Javascript</a></li>
-                    <li><a href="#">Angular</a></li>
-                    <li><a href="#">NodeJS</a></li>
+                    <li class="cursor"><a href="#">C programming</a></li>
+                    <li class="cursor"><a href="#">Java</a></li>
+                    <li class="cursor"><a href="#">HTML</a></li>
+                    <li class="cursor"><a href="#">CSS</a></li>
+                    <li class="cursor"><a href="#">Javascript</a></li>
+                    <li class="cursor"><a href="#">Angular</a></li>
+                    <li class="cursor"><a href="#">NodeJS</a></li>
                 </ul>
             </li>
      
@@ -33,13 +33,14 @@
                     <li><a href="#">Technical</a></li>
                     <li><a href="#">HR</a></li>
                     <li><a href="#">Coding</a></li>
+                    <li  class="cursor"><a (click)="Showtopics('Service' , 'resume')">Sample Resume</a></li>
                 </ul>
             </li>
             <li><a class="hsubs" href="#">Service Company</a>
                 <ul class="subs">
-                    <li><a href="#">Technical</a></li>
-                    <li><a href="#">HR</a></li>
-                    <li><a href="#">Interview Questions</a></li>
+                    <li  class="cursor"><a (click)="Showtopics('Service' , 'resume')">Sample Resume</a></li>
+                    <li class="cursor"><a href="#">HR</a></li>
+                    <li class="cursor"><a href="#">Interview Questions</a></li>
                 </ul>
             </li>
             <li><a class="hsubs" href="#">Product Company</a>
@@ -84,7 +85,11 @@
 
      <div class="ui-g-12">
             <app-aptitude *ngIf="showaptitude"></app-aptitude>
+            <app-sample-resume *ngIf="showresume">
+            </app-sample-resume>
      </div>
+
+    
 
     <p-blockUI [blocked]="blocked">
         <p-progressSpinner id="spinnerId" strokeWidth="5"></p-progressSpinner>

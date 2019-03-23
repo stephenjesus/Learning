@@ -15,6 +15,7 @@ export class MainnavigationbarComponent implements OnInit {
   breadcrmbItems: MenuItem[];
   homelink: any = {};
   showaptitude = false;
+  showresume = false;
   blocked = false;
   constructor() {
     this.breadcrmbItems = [];
@@ -26,6 +27,7 @@ export class MainnavigationbarComponent implements OnInit {
   }
   Hidefunction() {
     this.showaptitude = false;
+    this.showresume = false;
   }
 
   Showtopics(type , subtype) {
@@ -50,6 +52,9 @@ export class MainnavigationbarComponent implements OnInit {
       }
       case 'Service': {
         this.Hidefunction();
+        if (subtype === 'resume') {
+          this.showresume = true;
+        }
         break;
       }
       case 'Product': {
