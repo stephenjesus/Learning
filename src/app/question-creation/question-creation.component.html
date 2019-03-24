@@ -1,0 +1,182 @@
+
+<span class="ui-g-12 bgcolor pad20">
+    <p-growl [(value)]="validationError"></p-growl>
+    
+    <h4 class="pad7px"> Subject Name </h4>
+
+    <p-dropdown id="reportdropdown" [(ngModel)]="subjecttype" placeholder='Choose subject type'
+      class="ui-g-10 padledt0px" [options]="SubjectList">
+    </p-dropdown>
+    <br> <br>
+
+    <h4 class="ui-g-6 ui-g-nopad pad7px"> Question data </h4>    <h4 class="ui-g-6 ui-g-nopad pad7px"> Answer </h4>
+    <span class="ui-g-6">
+        <p-editor placeholder="Enter Question Here"
+        [(ngModel)]='qdata'
+        class="ui-g-12 ui-g-nopad text-content-area form-control"
+        [style]="{'height':'auto', 'min-height': '80px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+            <button class="ql-list" value="ordered" aria-label="List"></button>
+            <button class="ql-list" value="bullet" aria-label="List"></button>
+            <button class="ql-link" aria-label="Link"></button>
+            <button class="ql-code" aria-label="Code"></button>
+            <button class="ql-image" aria-label="Image"></button>
+            <button class="ql-script" value="super" aria-label="Script"></button>
+            <button class="ql-script" value="sub" aria-label="Script"></button>
+            <button class="ql-strike" aria-label="Strike"></button>
+          </span>
+        </p-header>
+        </p-editor>
+    </span>
+
+    <span class="ui-g-6">
+        <p-editor placeholder="Enter Answer Here"
+        [(ngModel)]='answer'
+        class="ui-g-12 ui-g-nopad text-content-area form-control"
+        [style]="{'height':'auto', 'min-height': '80px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+            <button class="ql-list" value="ordered" aria-label="List"></button>
+            <button class="ql-list" value="bullet" aria-label="List"></button>
+            <button class="ql-link" aria-label="Link"></button>
+            <button class="ql-code" aria-label="Code"></button>
+            <button class="ql-image" aria-label="Image"></button>
+            <button class="ql-script" value="super" aria-label="Script"></button>
+            <button class="ql-script" value="sub" aria-label="Script"></button>
+            <button class="ql-strike" aria-label="Strike"></button>
+          </span>
+        </p-header>
+        </p-editor>
+    </span>
+ 
+    <h4 class="ui-g-12 ui-g-nopad pad7px"> Options </h4>
+    <span class="ui-g-6">
+        <p-editor placeholder="Enter Options Here"
+        [(ngModel)]='option1'
+        class="ui-g-12 ui-g-nopad text-content-area form-control"
+        [style]="{'height':'auto', 'min-height': '80px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+            <button class="ql-list" value="ordered" aria-label="List"></button>
+            <button class="ql-list" value="bullet" aria-label="List"></button>
+            <button class="ql-link" aria-label="Link"></button>
+            <button class="ql-code" aria-label="Code"></button>
+            <button class="ql-image" aria-label="Image"></button>
+            <button class="ql-script" value="super" aria-label="Script"></button>
+            <button class="ql-script" value="sub" aria-label="Script"></button>
+            <button class="ql-strike" aria-label="Strike"></button>
+          </span>
+        </p-header>
+        </p-editor>
+    </span>
+    <span class="ui-g-6">
+        <p-editor placeholder="Enter Options Here"
+        [(ngModel)]='option2'
+        class="ui-g-12 ui-g-nopad text-content-area form-control"
+        [style]="{'height':'auto', 'min-height': '80px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+            <button class="ql-list" value="ordered" aria-label="List"></button>
+            <button class="ql-list" value="bullet" aria-label="List"></button>
+            <button class="ql-link" aria-label="Link"></button>
+            <button class="ql-code" aria-label="Code"></button>
+            <button class="ql-image" aria-label="Image"></button>
+            <button class="ql-script" value="super" aria-label="Script"></button>
+            <button class="ql-script" value="sub" aria-label="Script"></button>
+            <button class="ql-strike" aria-label="Strike"></button>
+          </span>
+        </p-header>
+        </p-editor>
+    </span>
+    <span class="ui-g-6">
+        <p-editor placeholder="Enter Options Here"
+        [(ngModel)]='option3'
+        class="ui-g-12 ui-g-nopad text-content-area form-control"
+        [style]="{'height':'auto', 'min-height': '80px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+            <button class="ql-list" value="ordered" aria-label="List"></button>
+            <button class="ql-list" value="bullet" aria-label="List"></button>
+            <button class="ql-link" aria-label="Link"></button>
+            <button class="ql-code" aria-label="Code"></button>
+            <button class="ql-image" aria-label="Image"></button>
+            <button class="ql-script" value="super" aria-label="Script"></button>
+            <button class="ql-script" value="sub" aria-label="Script"></button>
+            <button class="ql-strike" aria-label="Strike"></button>
+          </span>
+        </p-header>
+        </p-editor>
+    </span>
+    <span class="ui-g-6">
+        <p-editor placeholder="Enter Options Here"
+        [(ngModel)]='option4'
+        class="ui-g-12 ui-g-nopad text-content-area form-control"
+        [style]="{'height':'auto', 'min-height': '80px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+            <button class="ql-list" value="ordered" aria-label="List"></button>
+            <button class="ql-list" value="bullet" aria-label="List"></button>
+            <button class="ql-link" aria-label="Link"></button>
+            <button class="ql-code" aria-label="Code"></button>
+            <button class="ql-image" aria-label="Image"></button>
+            <button class="ql-script" value="super" aria-label="Script"></button>
+            <button class="ql-script" value="sub" aria-label="Script"></button>
+            <button class="ql-strike" aria-label="Strike"></button>
+          </span>
+        </p-header>
+        </p-editor>
+    </span>
+
+ 
+   
+ 
+
+    <h4 class="ui-g-12 ui-g-nopad pad7px"> Answer Explanation </h4>
+   
+    <span class="ui-g-12">
+        <p-editor placeholder="Enter Answer Here"
+        [(ngModel)]='explanation'
+        class="ui-g-12 ui-g-nopad text-content-area form-control"
+        [style]="{'height':'auto', 'min-height': '80px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+            <button class="ql-list" value="ordered" aria-label="List"></button>
+            <button class="ql-list" value="bullet" aria-label="List"></button>
+            <button class="ql-link" aria-label="Link"></button>
+            <button class="ql-code" aria-label="Code"></button>
+            <button class="ql-image" aria-label="Image"></button>
+            <button class="ql-script" value="super" aria-label="Script"></button>
+            <button class="ql-script" value="sub" aria-label="Script"></button>
+            <button class="ql-strike" aria-label="Strike"></button>
+          </span>
+        </p-header>
+        </p-editor>
+    </span>
+    <span class="ui-g-12 textcenter">
+        <button class="ui-g-3 downloadbtn" (click)="CreateMCQ()"> Create </button>
+     </span>
+    
+      
+</span>

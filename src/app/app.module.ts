@@ -81,13 +81,15 @@ import { AppComponent } from './app.component';
 import { MainnavigationbarComponent } from './mainnavigationbar/mainnavigationbar.component';
 import { AptitudeComponent } from './aptitude/aptitude.component';
 import { SampleResumeComponent } from './sample-resume/sample-resume.component';
+import { QuestionCreationComponent } from './question-creation/question-creation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainnavigationbarComponent,
     AptitudeComponent,
-    SampleResumeComponent
+    SampleResumeComponent,
+    QuestionCreationComponent
   ],
   imports: [
     BrowserModule,

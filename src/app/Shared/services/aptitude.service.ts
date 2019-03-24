@@ -9,11 +9,12 @@ import { BehaviorSubject } from 'rxjs/Rx';
 
 @Injectable()
 export class QuestionService {
-    api_url = environment.HOST.link;
+    api_url: any = environment.HOST.link;
 
     constructor(private http: Http, private router: Router) {}
 
     public resulttoAptitudequestion = new BehaviorSubject<any>(null);
+
     GetAllaptitudeQuestions(query) {
         const params: URLSearchParams = new URLSearchParams();
         params.set('type', query);
@@ -22,9 +23,8 @@ export class QuestionService {
         return this.http.get(this.api_url + '/getquestions?' + params);
     }
 
-    getAllSchoolList(payload) {
-        return this.http.post(this.api_url + '/schools', payload);
+    Createmcq(payload) {
+        console.log(payload , 'payload');
+        return this.http.post(this.api_url + '/createquestion', payload);
     }
 }
-
-// /getquestions?type=time_and_speed

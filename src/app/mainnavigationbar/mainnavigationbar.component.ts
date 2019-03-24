@@ -40,11 +40,9 @@ export class MainnavigationbarComponent implements OnInit {
         const query = 'time_and_speed';
         this.QuestionService.GetAllaptitudeQuestions(query).subscribe((res) => {
           const response = res.json();
-          console.log(response , 'reponsereponse');
           this.QuestionService.resulttoAptitudequestion.next(response);
           this.blocked = false;
           this.showaptitude = true;
-          console.log(response , 'reponse');
         });
         break;
       }

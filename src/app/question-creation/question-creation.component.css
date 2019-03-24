@@ -1,0 +1,17 @@
+.pad20 {
+    padding: 60px;
+}
+
+.pad7px {
+    padding-left: 7px;
+}
+.downloadbtn {
+    background: #2480ee;
+    color: #fff;
+    border: 0;
+    padding: 5px;
+    font-size: 13px;
+    /* display: inline-block; */
+    height: 45px;
+    border-radius: 3px;
+}
