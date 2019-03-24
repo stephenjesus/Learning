@@ -14,6 +14,9 @@ import { SimpleTimer } from 'ng2-simple-timer';
 import { DndModule } from 'ngx-drag-drop';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 
+import { QuestionService } from '../app/Shared/services/aptitude.service';
+
+
 /* Import prism core */
 import 'prismjs/prism';
 
@@ -157,7 +160,7 @@ import { SampleResumeComponent } from './sample-resume/sample-resume.component';
     }),
     DndModule
   ],
-  providers: [],
+  providers: [QuestionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

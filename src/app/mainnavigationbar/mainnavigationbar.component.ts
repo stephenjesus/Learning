@@ -5,6 +5,7 @@ import { BreadcrumbModule, MenuItem, TabViewModule,
    TooltipModule, Paginator, DataTable, FileUpload } from 'primeng/primeng';
 
 
+   import { QuestionService } from '../Shared/services/aptitude.service';
 
 @Component({
   selector: 'app-mainnavigationbar',
@@ -17,7 +18,7 @@ export class MainnavigationbarComponent implements OnInit {
   showaptitude = false;
   showresume = false;
   blocked = false;
-  constructor() {
+  constructor(private QuestionService: QuestionService) {
     this.breadcrmbItems = [];
     this.breadcrmbItems.push({ label : 'test' });
     this.homelink.routerLink = '/test';
@@ -36,10 +37,15 @@ export class MainnavigationbarComponent implements OnInit {
       case 'Aptitude': {
         this.Hidefunction();
         this.blocked = true;
-        setTimeout(() => {
+        const query = 'time_and_speed';
+        this.QuestionService.GetAllaptitudeQuestions(query).subscribe((res) => {
+          const response = res.json();
+          console.log(response , 'reponsereponse');
+          this.QuestionService.resulttoAptitudequestion.next(response);
           this.blocked = false;
           this.showaptitude = true;
-        }, 3000);
+          console.log(response , 'reponse');
+        });
         break;
       }
       case 'Programming': {

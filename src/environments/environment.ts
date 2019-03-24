@@ -3,8 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false ,
+  HOST: {
+    COOKIE_LINK: 'https://us-central1-stemal-learning.cloudfunctions.net/webApi',
+    link: 'https://us-central1-stemal-learning.cloudfunctions.net/webApi',
+    HOST_LINK: 'https://us-central1-stemal-learning.cloudfunctions.net/webApi',
+  },
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { QuestionService } from '../Shared/services/aptitude.service';
+
 @Component({
   selector: 'app-aptitude',
   templateUrl: './aptitude.component.html',
@@ -10,11 +12,11 @@ export class AptitudeComponent implements OnInit {
   currentQ;
   p: number = 1;
   toggle = false;
-  constructor() {
+  constructor(public QuestionService: QuestionService) {
     const json = {
       q_data : 'A person crosses a 600 m long street in 5 minutes. What is his speed in km per hour?',
       answer : '7.2' ,
-      explanation :  'Speed =		600	m/sec. 5 x 60 = 2 m/sec.' ,
+      answer_explantion :  'Speed =		600	m/sec. 5 x 60 = 2 m/sec.' ,
       options: [
         3.6,
         7.2,
@@ -22,7 +24,7 @@ export class AptitudeComponent implements OnInit {
         10
       ]
     };
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= 10; i++) {
       this.collection.push(json);
     }
    }
@@ -40,6 +42,10 @@ export class AptitudeComponent implements OnInit {
   //   }
 
   ngOnInit() {
+    this.QuestionService.resulttoAptitudequestion.subscribe( (response) => {
+      this.collection = response;
+      console.log(this.collection , 'collection');
+    });
   }
 
 }
