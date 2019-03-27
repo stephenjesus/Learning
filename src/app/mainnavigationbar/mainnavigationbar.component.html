@@ -9,10 +9,11 @@
 
             <li><a class="hsubs" href="#">Aptitude</a>
                 <ul class="subs">
-                    <li class="cursor"><a href="#">Logical</a></li>
-                    <li class="cursor"><a href="#">Verbal</a></li>
-                    <li class="cursor"><a  (click)="Showtopics('Aptitude' , 'c')">C Aptitude</a></li>
-                    <li class="cursor"><a href="#">Puzzles</a></li>
+                    <li class="cursor"><a (click)="Showtopics('Aptitude' , 'Aptitude')">Aptitude</a></li>
+                    <li class="cursor"><a (click)="Showtopics('Aptitude' , 'Logical')">Logical</a></li>
+                    <li class="cursor"><a (click)="Showtopics('Aptitude' , 'Verbal')">Verbal</a></li>
+                    <li class="cursor"><a  (click)="Showtopics('Aptitude' , 'C Programming')">C Aptitude</a></li>
+                    <!-- <li class="cursor"><a href="#">Puzzles</a></li> -->
                 </ul>
             </li>
 
@@ -41,6 +42,7 @@
                     <li  class="cursor"><a (click)="Showtopics('Service' , 'resume')">Sample Resume</a></li>
                     <li class="cursor"><a href="#">HR</a></li>
                     <li class="cursor"><a href="#">Interview Questions</a></li>
+                    <li class="cursor"><a href="#">Tips For Interview</a></li>
                 </ul>
             </li>
             <li><a class="hsubs" href="#">Product Company</a>
@@ -68,8 +70,9 @@
                 <ul class="subs">
                 </ul>
             </li>
-            <li><a class="hsubs" href="#">About</a>
+            <li><a class="hsubs">About</a>
                 <ul class="subs">
+                    <li (click)="Showtopics('About' , 'create')"><a href="#">Create</a></li>
                 </ul>
             </li>
             <!-- <div id="lavalamp"></div> -->
@@ -87,7 +90,8 @@
             <app-aptitude *ngIf="showaptitude"></app-aptitude>
             <app-sample-resume *ngIf="showresume">
             </app-sample-resume>
-            <app-question-creation>
+
+            <app-question-creation *ngIf="showcreate">
                 
             </app-question-creation>
      </div>

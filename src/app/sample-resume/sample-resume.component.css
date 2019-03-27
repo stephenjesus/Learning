@@ -11,6 +11,9 @@
     vertical-align: top;
     margin-bottom: 8px;
 }
+.title {
+    color: #808000;
+}
 .angar {
     color: #fff;
     text-decoration: blink;

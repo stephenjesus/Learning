@@ -18,6 +18,7 @@ export class MainnavigationbarComponent implements OnInit {
   showaptitude = false;
   showresume = false;
   blocked = false;
+  showcreate = false;
   constructor(private QuestionService: QuestionService) {
     this.breadcrmbItems = [];
     this.breadcrmbItems.push({ label : 'test' });
@@ -29,6 +30,7 @@ export class MainnavigationbarComponent implements OnInit {
   Hidefunction() {
     this.showaptitude = false;
     this.showresume = false;
+    this.showcreate = false;
   }
 
   Showtopics(type , subtype) {
@@ -40,7 +42,10 @@ export class MainnavigationbarComponent implements OnInit {
         const query = 'time_and_speed';
         this.QuestionService.GetAllaptitudeQuestions(query).subscribe((res) => {
           const response = res.json();
-          this.QuestionService.resulttoAptitudequestion.next(response);
+          const obj: any = {};
+          obj.response = response;
+          obj.type = subtype;
+          this.QuestionService.resulttoAptitudequestion.next(obj);
           this.blocked = false;
           this.showaptitude = true;
         });
@@ -65,7 +70,11 @@ export class MainnavigationbarComponent implements OnInit {
         this.Hidefunction();
         break;
       }
-
+      case 'About': {
+        this.Hidefunction();
+        this.showcreate = true;
+        break;
+      }
     }
   }
 

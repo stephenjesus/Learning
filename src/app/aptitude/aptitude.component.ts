@@ -12,6 +12,7 @@ export class AptitudeComponent implements OnInit {
   currentQ;
   p: number = 1;
   toggle = false;
+  mainsubjectname;
   constructor(public QuestionService: QuestionService) {
     const json = {
       q_data : 'A person crosses a 600 m long street in 5 minutes. What is his speed in km per hour?',
@@ -42,8 +43,9 @@ export class AptitudeComponent implements OnInit {
   //   }
 
   ngOnInit() {
-    this.QuestionService.resulttoAptitudequestion.subscribe( (response) => {
-      this.collection = response;
+    this.QuestionService.resulttoAptitudequestion.subscribe( (obj) => {
+      this.collection = obj.response;
+      this.mainsubjectname = obj.type;
       console.log(this.collection , 'collection');
     });
   }

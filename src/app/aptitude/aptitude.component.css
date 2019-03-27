@@ -7,6 +7,11 @@
 .quesspan {
 margin-bottom: 20px;
 }
+.comlist {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
 .sno {
     padding-right: 12px;
 }

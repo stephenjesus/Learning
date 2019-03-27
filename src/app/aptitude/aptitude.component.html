@@ -1,19 +1,43 @@
 <div class="ui-g-12 bgcolor">
-        <ul>
-            <li>Numbers</li>
-            <li>LCM and HCF</li>
-            <li>Time Speed Distance</li>
-            <li>Percentages</li>
-            <li>Profit and Loss</li>
-            <li>Age</li>
-            <li>Boats and Streams</li>
-            <li>Simple Interest Compound</li>
-            <li>Interest Pipes and Cisterns Trains</li>
+        <ul *ngIf="mainsubjectname === 'Aptitude'">
+            <li class="comlist">Numbers</li>
+            <li class="comlist">LCM and HCF</li>
+            <li class="comlist">Time Speed Distance</li>
+            <li class="comlist">Percentages</li>
+            <li class="comlist">Profit and Loss</li>
+            <li class="comlist">Age</li>
+            <li class="comlist">Boats and Streams</li>
+            <li class="comlist">Simple Interest Compound</li>
+            <li class="comlist">Interest Pipes and Cisterns Trains</li>
+        </ul>  
+        
+        <ul *ngIf="mainsubjectname === 'Logical'">
+            <li class="comlist">Blood Relation</li>
+            <li class="comlist">Direction and Senses</li>
+            <li class="comlist">Number Series</li>
+            <li class="comlist">Data Sufficiency</li>
+            <li class="comlist">Letter and Symbol Series</li>
+            <li class="comlist">Statement and Assumption.</li>
+            <li class="comlist">Statement and Conclusion.</li>
+            <li class="comlist">Coding and Decoding</li>
+            <li class="comlist"> Clocks Calender and Age</li>
+     
+        </ul>
 
-        </ul>    
+            <ul *ngIf="mainsubjectname === 'Verbal'">
+                <li class="comlist">Antonyms</li>
+                <li class="comlist">Idioms and Phrases</li>
+                <li class="comlist">Time Speed Distance</li>
+                <li class="comlist">Synonyms</li>
+                <li class="comlist">Error Correction</li>
+                <li class="comlist">Fill in the blanks</li>
+                <li class="comlist">Comprehension</li>
+                <li class="comlist">Grammar Concepts</li>
+                <li class="comlist">Idioms and Phrases</li>
+            </ul>
     
    <span class="ui-g-12 textcenter">
-         C Programming (MCQ) 
+         {{ mainsubjectname }}
    </span>
     <h4 class="ui-g-12 keyclass">
         Important Formulae or Keywords
