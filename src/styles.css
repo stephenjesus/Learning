@@ -3,7 +3,46 @@ body {
     font: 14px/1.3 Arial,sans-serif;
     background-color: #212121;
 }
-
+.ytp-chrome-top {
+    display: none;
+}
+.ytp-expand-pause-overlay .ytp-pause-overlay {
+    display: none;
+}
+@media screen
+and (min-width:1025px) and (max-width:1440px) {
+    .plyr__video-embed {
+            padding-bottom: 3% !important;
+            padding-top: 3% !important;
+        height: 420px;
+    }
+}
+@media screen
+ and (min-width:641px) and (max-width:1024px) {
+    .plyr__video-embed {
+            padding-bottom: 3% !important;
+            padding-top: 3% !important;
+        height: 420px;
+    }
+ }
+@media screen
+and (min-width:1441px) {
+    .plyr__video-embed {
+            padding-bottom: 3% !important;
+            padding-top: 3% !important;
+        height: 420px;
+    }
+}
+@media screen
+and (min-width:0px) and (max-width:640px) {
+    .plyr__video-embed {
+        padding-bottom: 5% !important;
+        height: 204px;
+    }
+ }
+ .plyr__video-embed iframe {
+    position: unset !important;
+}
 .textcolor {
     color: #ffffff;
 }

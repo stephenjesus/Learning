@@ -1,11 +1,12 @@
 
 <div class="ui-g-12" style="margin-bottom: 18%;">
     <span class="ui-g-12">
-            <img class="ui-g-12 container" src="assets/home.jpg">
+            <img class="ui-g-12 container" src="http://www.makeintern.com/learning/img/online-course12.jpg">
     </span>
     <div class="ui-g-12">
         <ul id="nav">
-            <li><a href="https://trendingnews005.blogspot.com/2018/12/the-top-10-programming-languages.html">Home</a></li>
+                <!-- <a href="https://trendingnews005.blogspot.com/2018/12/the-top-10-programming-languages.html"></a> -->
+            <li class="cursor"> <a class="hsubs" (click)="Showtopics('Home' , 'page')"> Home </a> </li>
 
             <li><a class="hsubs" href="#">Aptitude</a>
                 <ul class="subs">
@@ -90,9 +91,8 @@
             <app-aptitude *ngIf="showaptitude"></app-aptitude>
             <app-sample-resume *ngIf="showresume">
             </app-sample-resume>
-
-            <app-question-creation *ngIf="showcreate">
-                
+            <app-homepage *ngIf="showhomepage"></app-homepage>
+            <app-question-creation *ngIf="showcreate">   
             </app-question-creation>
      </div>
 

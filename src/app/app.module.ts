@@ -13,6 +13,8 @@ import {WebcamModule} from 'ngx-webcam';
 import { SimpleTimer } from 'ng2-simple-timer';
 import { DndModule } from 'ngx-drag-drop';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { PlyrModule } from 'ngx-plyr';
+
 
 import { QuestionService } from '../app/Shared/services/aptitude.service';
 
@@ -82,6 +84,7 @@ import { MainnavigationbarComponent } from './mainnavigationbar/mainnavigationba
 import { AptitudeComponent } from './aptitude/aptitude.component';
 import { SampleResumeComponent } from './sample-resume/sample-resume.component';
 import { QuestionCreationComponent } from './question-creation/question-creation.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -89,10 +92,12 @@ import { QuestionCreationComponent } from './question-creation/question-creation
     MainnavigationbarComponent,
     AptitudeComponent,
     SampleResumeComponent,
-    QuestionCreationComponent
+    QuestionCreationComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
+    PlyrModule,
     NgxPaginationModule,
     Routing,
     WebcamModule,

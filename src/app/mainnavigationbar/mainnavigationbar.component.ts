@@ -19,6 +19,7 @@ export class MainnavigationbarComponent implements OnInit {
   showresume = false;
   blocked = false;
   showcreate = false;
+  showhomepage = true;
   constructor(private QuestionService: QuestionService) {
     this.breadcrmbItems = [];
     this.breadcrmbItems.push({ label : 'test' });
@@ -31,6 +32,7 @@ export class MainnavigationbarComponent implements OnInit {
     this.showaptitude = false;
     this.showresume = false;
     this.showcreate = false;
+    this.showhomepage = false;
   }
 
   Showtopics(type , subtype) {
@@ -53,6 +55,11 @@ export class MainnavigationbarComponent implements OnInit {
       }
       case 'Programming': {
         this.Hidefunction();
+        break;
+      }
+      case 'Home': {
+        this.Hidefunction();
+        this.showhomepage = true;
         break;
       }
       case 'Interview': {
