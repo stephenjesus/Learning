@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs/Rx';
 
 @Injectable()
 export class QuestionService {
-    api_url: any = environment.HOST.link;
+    api_url: any = `https://placementking.herokuapp.com/`;
 
     constructor(private http: Http, private router: Router) {}
 
@@ -25,6 +25,10 @@ export class QuestionService {
 
     Createmcq(payload) {
         console.log(payload , 'payload');
-        return this.http.post(this.api_url + '/createquestion', payload);
+        return this.http.post(this.api_url + 'questions/create', payload);
+    }
+
+    getquestions(type) {
+        return this.http.get(this.api_url + `questions/read?type=${type}`);
     }
 }

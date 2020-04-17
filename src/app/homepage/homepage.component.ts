@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 
-import * as Plyr from 'plyr';
 
 
 
@@ -18,7 +17,6 @@ export class HomepageComponent implements OnInit {
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this.player = new Plyr('#plyrID', { captions: { active: true } });
   }
   sanitize(url: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(url);

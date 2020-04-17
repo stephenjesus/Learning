@@ -2,10 +2,22 @@
 <span class="ui-g-12 bgcolor pad20">
     <p-growl [(value)]="validationError"></p-growl>
     
-    <h4 class="pad7px"> Subject Name </h4>
+    <!-- <input type="number" [(ngModel)]="qIndex">
 
-    <p-dropdown id="reportdropdown" [(ngModel)]="subjecttype" placeholder='Choose subject type'
-      class="ui-g-10 padledt0px" [options]="SubjectList">
+    <button class="ui-g-3 downloadbtn" (click)="changeQuestionIndex()"> list & update </button> -->
+
+    <h4 class="pad7px" (click)=getQuestion()> Subject Name </h4>
+
+    <p-dropdown id="reportdropdown" [(ngModel)]="type" placeholder='Choose subject type'
+      class="ui-g-10 padledt0px" [options]="subTypeList">
+    </p-dropdown>
+
+    <p-dropdown id="reportdropdown" [(ngModel)]="subType" placeholder='Choose sub type' class="ui-g-10 padledt0px"
+      [options]="SubjectList">
+    </p-dropdown>
+
+    <p-dropdown id="reportdropdown" [(ngModel)]="year" placeholder='Choose sub type' class="ui-g-10 padledt0px"
+      [options]="yearList">
     </p-dropdown>
     <br> <br>
 
@@ -180,3 +192,8 @@
     
       
 </span>
+
+
+<p-blockUI [blocked]="blocked">
+  <p-progressSpinner id="spinnerId" strokeWidth="5"></p-progressSpinner>
+</p-blockUI>

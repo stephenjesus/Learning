@@ -4,16 +4,10 @@ import {RouterModule} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {APP_BASE_HREF} from '@angular/common';
-import { AceEditorModule } from 'ng2-ace-editor';
-import { RollbarModule, RollbarService } from 'angular-rollbar';
+
+
 import {SidebarModule} from 'primeng/components/sidebar/sidebar';
-import { LaddaModule } from 'angular2-ladda';
-import { PdfViewerModule } from 'ng2-pdf-viewer';
-import {WebcamModule} from 'ngx-webcam';
-import { SimpleTimer } from 'ng2-simple-timer';
-import { DndModule } from 'ngx-drag-drop';
-import { NgCircleProgressModule } from 'ng-circle-progress';
-import { PlyrModule } from 'ngx-plyr';
+
 
 
 import { QuestionService } from '../app/Shared/services/aptitude.service';
@@ -58,7 +52,6 @@ import {
   TooltipModule,
   CalendarModule,
   PaginatorModule,
-  TreeModule,
   DragDropModule,
   MultiSelectModule,
   ConfirmDialogModule,
@@ -72,7 +65,6 @@ import {
   TieredMenuModule
 } from 'primeng/primeng';
 
-import { ChartModule } from 'primeng/components/chart/chart';
 import {NgxPaginationModule} from 'ngx-pagination'; 
 import { Routing } from './routes';
 import { SharedModule } from './Shared/shared-module';
@@ -97,10 +89,8 @@ import { HomepageComponent } from './homepage/homepage.component';
   ],
   imports: [
     BrowserModule,
-    PlyrModule,
     NgxPaginationModule,
     Routing,
-    WebcamModule,
     FormsModule,
     ReactiveFormsModule,
     AccordionModule,
@@ -138,34 +128,14 @@ import { HomepageComponent } from './homepage/homepage.component';
     DragDropModule,
     ProgressBarModule,
     FieldsetModule,
-    AceEditorModule,
     ConfirmDialogModule,
     SliderModule,
-    LaddaModule,
     ProgressSpinnerModule,
     LightboxModule,
     StepsModule,
     InplaceModule,
-    PdfViewerModule,
     GalleriaModule,
-    ChartModule,
     TieredMenuModule,
-    NgCircleProgressModule.forRoot({
-      backgroundStrokeWidth: 0,
-      radius: 60,
-      space: -22,
-      outerStrokeWidth: 10,
-      outerStrokeColor: '#20A090',
-      outerStrokeLinecap: 'square',
-      innerStrokeColor: '#DFDFDF',
-      innerStrokeWidth: 10,
-      animationDuration: 300,
-      showUnits: false,
-      showBackground: false,
-      clockwise: false,
-      showSubtitle: false,
-    }),
-    DndModule
   ],
   providers: [QuestionService],
   bootstrap: [AppComponent]
