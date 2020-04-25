@@ -24,11 +24,19 @@ export class QuestionService {
     }
 
     Createmcq(payload) {
-        console.log(payload , 'payload');
         return this.http.post(this.api_url + 'questions/create', payload);
+    }
+
+    createProduct(payload) {
+        return this.http.post(this.api_url + 'questions/product', payload);
     }
 
     getquestions(type) {
         return this.http.get(this.api_url + `questions/read?type=${type}`);
     }
+
+    updateProduct(payload) {
+        return this.http.post(this.api_url + 'questions/product/update', payload);
+    }
+    
 }

@@ -8,6 +8,9 @@
 
     <h4 class="pad7px" (click)=getQuestion()> Subject Name </h4>
 
+    <button class="pad7px" (click)=getProduct()> Get Product by Type </button>
+    
+
     <p-dropdown id="reportdropdown" [(ngModel)]="type" placeholder='Choose subject type'
       class="ui-g-10 padledt0px" [options]="subTypeList">
     </p-dropdown>
@@ -20,6 +23,8 @@
       [options]="yearList">
     </p-dropdown>
     <br> <br>
+
+    <div *ngIf="!isProduct">
 
     <h4 class="ui-g-6 ui-g-nopad pad7px"> Question data </h4>    <h4 class="ui-g-6 ui-g-nopad pad7px"> Answer </h4>
     <span class="ui-g-6">
@@ -186,9 +191,161 @@
         </p-header>
         </p-editor>
     </span>
+
     <span class="ui-g-12 textcenter">
-        <button class="ui-g-3 downloadbtn" (click)="CreateMCQ()"> Create </button>
-     </span>
+      <button class="ui-g-3 downloadbtn" (click)="CreateMCQ()"> Create </button>
+    </span>
+  </div>
+
+  <div  *ngIf="isProduct">
+
+  
+    <div class="ui-g-12 ui-g-nopad pad7px" *ngIf="this.overview">
+        <div>
+          Overview
+        </div>
+        <div [innerHTML]="overview">
+        </div>
+    </div>
+
+    <div class="ui-g-12 ui-g-nopad pad7px" *ngIf="this.description">
+      <div>
+        Description
+      </div>
+      <div [innerHTML]="description">
+      </div>
+  </div>
+
+    <h4 class="ui-g-6 ui-g-nopad pad7px"> Overview </h4>    <h4 class="ui-g-6 ui-g-nopad pad7px"> Description </h4>
+    <span class="ui-g-6">
+        <p-editor placeholder="Enter Overview Here"
+        [(ngModel)]='overview'
+        class="ui-g-12 ui-g-nopad text-content-area form-control"
+        [style]="{'height':'auto', 'min-height': '80px'}">
+        <p-header>
+          <span class="ql-formats">
+            <button class="ql-bold" aria-label="Bold"></button>
+            <button class="ql-italic" aria-label="Italic"></button>
+            <button class="ql-underline" aria-label="Underline"></button>
+            <button class="ql-list" value="ordered" aria-label="List"></button>
+            <button class="ql-list" value="bullet" aria-label="List"></button>
+            <button class="ql-link" aria-label="Link"></button>
+            <button class="ql-code" aria-label="Code"></button>
+            <button class="ql-image" aria-label="Image"></button>
+            <button class="ql-script" value="super" aria-label="Script"></button>
+            <button class="ql-script" value="sub" aria-label="Script"></button>
+            <button class="ql-strike" aria-label="Strike"></button>
+          </span>
+        </p-header>
+        </p-editor>
+    </span>
+
+    <span class="ui-g-6">
+      <p-editor placeholder="Enter Description Here"
+      [(ngModel)]='description'
+      class="ui-g-12 ui-g-nopad text-content-area form-control"
+      [style]="{'height':'auto', 'min-height': '80px'}">
+      <p-header>
+        <span class="ql-formats">
+          <button class="ql-bold" aria-label="Bold"></button>
+          <button class="ql-italic" aria-label="Italic"></button>
+          <button class="ql-underline" aria-label="Underline"></button>
+          <button class="ql-list" value="ordered" aria-label="List"></button>
+          <button class="ql-list" value="bullet" aria-label="List"></button>
+          <button class="ql-link" aria-label="Link"></button>
+          <button class="ql-code" aria-label="Code"></button>
+          <button class="ql-image" aria-label="Image"></button>
+          <button class="ql-script" value="super" aria-label="Script"></button>
+          <button class="ql-script" value="sub" aria-label="Script"></button>
+          <button class="ql-strike" aria-label="Strike"></button>
+        </span>
+      </p-header>
+      </p-editor>
+  </span>
+
+
+  <h4 class="ui-g-6 ui-g-nopad pad7px"> Name </h4>    <h4 class="ui-g-6 ui-g-nopad pad7px"> Price </h4>
+  <span class="ui-g-6">
+      <p-editor placeholder="Enter Name Here"
+      [(ngModel)]='name'
+      class="ui-g-12 ui-g-nopad text-content-area form-control"
+      [style]="{'height':'auto', 'min-height': '80px'}">
+      <p-header>
+        <span class="ql-formats">
+          <button class="ql-bold" aria-label="Bold"></button>
+          <button class="ql-italic" aria-label="Italic"></button>
+          <button class="ql-underline" aria-label="Underline"></button>
+          <button class="ql-list" value="ordered" aria-label="List"></button>
+          <button class="ql-list" value="bullet" aria-label="List"></button>
+          <button class="ql-link" aria-label="Link"></button>
+          <button class="ql-code" aria-label="Code"></button>
+          <button class="ql-image" aria-label="Image"></button>
+          <button class="ql-script" value="super" aria-label="Script"></button>
+          <button class="ql-script" value="sub" aria-label="Script"></button>
+          <button class="ql-strike" aria-label="Strike"></button>
+        </span>
+      </p-header>
+      </p-editor>
+  </span>
+
+  <span class="ui-g-6">
+    <p-editor placeholder="Enter Prize Here"
+    [(ngModel)]='price'
+    class="ui-g-12 ui-g-nopad text-content-area form-control"
+    [style]="{'height':'auto', 'min-height': '80px'}">
+    <p-header>
+      <span class="ql-formats">
+        <button class="ql-bold" aria-label="Bold"></button>
+        <button class="ql-italic" aria-label="Italic"></button>
+        <button class="ql-underline" aria-label="Underline"></button>
+        <button class="ql-list" value="ordered" aria-label="List"></button>
+        <button class="ql-list" value="bullet" aria-label="List"></button>
+        <button class="ql-link" aria-label="Link"></button>
+        <button class="ql-code" aria-label="Code"></button>
+        <button class="ql-image" aria-label="Image"></button>
+        <button class="ql-script" value="super" aria-label="Script"></button>
+        <button class="ql-script" value="sub" aria-label="Script"></button>
+        <button class="ql-strike" aria-label="Strike"></button>
+      </span>
+    </p-header>
+    </p-editor>
+</span>
+
+
+<h3 class="ui-g-3 ui-g-nopad pad7px">payment_link </h3>
+<h3 class="ui-g-3 ui-g-nopad pad7px">image_link </h3>
+<h3 class="ui-g-2 ui-g-nopad pad7px"> ratings</h3>
+<h3 class="ui-g-2 ui-g-nopad pad7px">rating_count </h3>
+<h3 class="ui-g-2 ui-g-nopad pad7px"> file_size </h3>
+
+<span class="ui-g-3">
+  <input class="inputbox" [(ngModel)]='payment_link'> 
+</span>
+
+<span class="ui-g-3">
+  <input class="inputbox" [(ngModel)]='image_link'> 
+</span>
+
+<span class="ui-g-2">
+  <input class="inputbox" [(ngModel)]='ratings'> 
+</span>
+<span class="ui-g-2">
+  <input class="inputbox" [(ngModel)]='rating_count'> 
+</span>
+<span class="ui-g-2">
+  <input class="inputbox" [(ngModel)]='file_size'> 
+</span>
+
+
+
+
+
+<span class="ui-g-12 textcenter">
+  <button class="ui-g-3 downloadbtn"  *ngIf="!product_id" (click)="createProduct()"> Create Product </button>
+  <button *ngIf="product_id" class="ui-g-3 downloadbtn" (click)="updateProduct()"> Update Product </button>
+</span>
+
+  </div>
     
       
 </span>

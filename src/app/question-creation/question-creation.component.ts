@@ -28,6 +28,21 @@ export class QuestionCreationComponent implements OnInit {
   qIndex;
   blocked = false;
 
+  isProduct = true;
+  product_id = "";
+
+
+  name = null;
+  description = null;
+  overview = null;
+  price = null;
+  payment_link  = null;
+  ratings = null;
+  rating_count = null;
+  image_link = null;
+  file_size =  null;
+  productList = [];
+
   constructor(public QuestionService: QuestionService) { }
 
   ngOnInit() {
@@ -40,7 +55,7 @@ export class QuestionCreationComponent implements OnInit {
         value: 'wipro',
       }
       , {
-        label: 'TCC',
+        label: 'TCS',
         value: 'tcs',
       }
       , {
@@ -54,6 +69,30 @@ export class QuestionCreationComponent implements OnInit {
       , {
         label: 'CTS',
         value: 'cts',
+      }
+      , {
+        label: 'Tech Mahindra',
+        value: 'Tech-Mahindra',
+      }
+      , {
+        label: 'HP',
+        value: 'Hp',
+      }
+      , {
+        label: 'DELL',
+        value: 'Dell',
+      }
+      , {
+        label: 'IBM',
+        value: 'IBM',
+      }
+      , {
+        label: 'HCL',
+        value: 'HCL',
+      }
+      , {
+        label: 'MindTree',
+        value: 'Mindtree',
       }
     ]
     this.yearList.push(
@@ -135,11 +174,131 @@ export class QuestionCreationComponent implements OnInit {
   }
 
 
+  createProduct() {
+    if (this.name , this.description && this.overview && this.price && this.type &&
+      this.payment_link && this.ratings && this.rating_count && this.image_link && this.file_size) {
+        this.blocked = true;
+        const payload: any = {};
+        payload.name = this.name;
+        payload.description = this.description;
+        payload.overview = this.overview;
+        payload.price = this.price;
+        payload.type = this.type;
+        payload.payment_link = this.payment_link;
+        payload.ratings = this.ratings;
+        payload.rating_count = this.rating_count;
+        payload.image_link = this.image_link;
+        payload.file_size = this.file_size;
+        this.QuestionService.createProduct(payload).subscribe( (done) => {
+          this.name = null;
+          this.description = null;
+          this.overview = null;
+          this.price = null;
+          this.type = null;
+          this.payment_link  = null;
+          this.ratings = null;
+          this.rating_count = null;
+          this.image_link = null;
+          this.file_size =  null;
+          this.validationError = [];
+          this.validationError.push({
+            severity: 'success',
+            summary: 'Product Created',
+            detail: 'Successfully'
+          });
+          this.blocked = false;
+        });
+    } else {
+      this.blocked = false;
+      this.validationError = [];
+      this.validationError.push({
+        severity: 'error',
+        summary: 'Validation failed',
+        detail: 'Enter all requried fields'
+      });
+    }
+  }
+
+  clearProduct() {
+    this.name = null;
+    this.product_id = null;
+    this.type = null;
+    this.description = null;
+    this.overview = null;
+    this.price = null;
+    this.payment_link  = null;
+    this.ratings = null;
+    this.rating_count = null;
+    this.image_link = null;
+    this.file_size =  null;
+  }
+  updateProduct() {
+    if (this.name , this.description && this.overview && this.price && this.type && this.product_id &&
+      this.payment_link && this.ratings && this.rating_count && this.image_link && this.file_size) {
+        this.blocked = true;
+        const payload: any = {};
+        payload.id = this.product_id;
+        payload.type = this.type;
+        payload.name = this.name;
+        payload.description = this.description;
+        payload.overview = this.overview;
+        payload.price = this.price;
+        payload.payment_link = this.payment_link;
+        payload.ratings = this.ratings;
+        payload.rating_count = this.rating_count;
+        payload.image_link = this.image_link;
+        payload.file_size = this.file_size;
+        this.QuestionService.updateProduct(payload).subscribe( (done) => {
+          this.clearProduct();
+          this.validationError = [];
+          this.validationError.push({
+            severity: 'success',
+            summary: 'Product Created',
+            detail: 'Successfully'
+          });
+          this.blocked = false;
+        });
+    } else {
+      this.blocked = false;
+      this.validationError = [];
+      this.validationError.push({
+        severity: 'error',
+        summary: 'Validation failed',
+        detail: 'Enter all requried fields'
+      });
+    }
+  }
+
+
   getQuestion() {
-    this.QuestionService.getquestions(this.type).subscribe((res: any) => { 
-      res = res.json();
-      this.questionList = res.arr;
-    }); 
+    this.isProduct = !this.isProduct;
+  }
+  getProduct() {
+    if (this.isProduct && this.type) {
+      this.blocked = true;
+      let temptype = `${this.type}_product`
+      this.QuestionService.getquestions(temptype).subscribe((res: any) => { 
+        res = res.json();
+        this.blocked = false;
+        this.productList = res.arr;
+        this.qIndex = 0;
+        if (this.productList  && this.productList .length) {
+          this.name = this.productList[this.qIndex].name;
+          this.description = this.productList[this.qIndex].description;
+          this.overview = this.productList[this.qIndex].overview;
+          this.price = this.productList[this.qIndex].prize;
+          this.product_id = this.productList[this.qIndex].id;
+          this.payment_link = this.productList[this.qIndex].payment_link;
+          this.image_link = this.productList[this.qIndex].image_link;
+          this.ratings = this.productList[this.qIndex].ratings;
+          this.rating_count = this.productList[this.qIndex].rating_count;
+          this.file_size = this.productList[this.qIndex].file_size;
+        } else {
+          this.productList = [];
+          this.clearProduct();
+        }
+      }); 
+    }
   }
   changeQuestionIndex() { 
     this.option1 = this.questionList[this.qIndex].option1;
