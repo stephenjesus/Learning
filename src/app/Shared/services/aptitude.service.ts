@@ -38,5 +38,9 @@ export class QuestionService {
     updateProduct(payload) {
         return this.http.post(this.api_url + 'questions/product/update', payload);
     }
+
+    updateDb(id , payload) {
+        return this.http.put(`http://api.jsoneditoronline.org/v1/docs/${id}`, payload);
+    }
     
 }

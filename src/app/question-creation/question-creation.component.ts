@@ -249,6 +249,15 @@ export class QuestionCreationComponent implements OnInit {
         payload.image_link = this.image_link;
         payload.file_size = this.file_size;
         this.QuestionService.updateProduct(payload).subscribe( (done) => {
+         let db_id = `placement_master_${this.type}`;
+         const dbpayload = {
+            "_id": db_id,
+            "_rev": `placement_master_${this.type}`,
+            "name": "PlacementMaster",
+            "data": payload,
+            "updated": "2015-03-14T11:39:47.394Z"
+         }
+         this.QuestionService.updateDb(db_id , dbpayload).subscribe((done) => {
           this.clearProduct();
           this.validationError = [];
           this.validationError.push({
@@ -257,6 +266,7 @@ export class QuestionCreationComponent implements OnInit {
             detail: 'Successfully'
           });
           this.blocked = false;
+         });
         });
     } else {
       this.blocked = false;
